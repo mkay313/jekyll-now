@@ -1,15 +1,12 @@
 ---
 layout: page
-title: About
+title: About me
 permalink: /about/
 ---
 
-Some information about you!
+I'm a software tester / quality assurance gal, currently working at [Cognifide](http://cognifide.com).
 
-### More Information
+Apart from testing, my interests include data analysis in R and bash scripting.
 
-A place to include any other types of information that you'd like to include about yourself.
+If you have an interesting book to recommend, the best way to contact me is via [email](mailto:mkmozgawa@gmail.com).
 
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
