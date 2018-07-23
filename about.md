@@ -10,4 +10,4 @@ My interests include, unsurprisingly, software testing, as well as data analysis
 
 If you have an interesting book to recommend, the best way to contact me is via [email](mailto:mkmozgawa@gmail.com).
 
-This page has been created using [Jekyll Now](https://github.com/barryclark/jekyll-now); its source code (and other silly projects of mine) are available [here](https://github.com/mkmozgawa)).
+This page has been created using [Jekyll Now](https://github.com/barryclark/jekyll-now); its source code (and other silly projects of mine) are available [here](https://github.com/mkmozgawa).
