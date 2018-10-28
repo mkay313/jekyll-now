@@ -15,36 +15,21 @@ There was, however, one issue: setting up the shared folders. What a friggin' pa
 
 To make like easier for anyone googling "How to make shared folders work in Virtualbox on Windows with a Linux guest?", I present a few links from around the internet. I mean, I don't see the point in writing a full-blown guide, because the parts are already there, but let's say I'm going to present to you the most unfortunate scenario possible, and may the odds be in your favour.
 
-### Q&A guide
-
-__OK, so I want to have a file I can import into VirtualBox that will contain an operating system and everything I installed onto it previously. And I want to share it with my friends, yay!__
-
-Perfect. So first, download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). Choose the download file according to your host operating system. (Some vocab right there: host = the system that's running the VirtualBox software, guest = the system that's running __inside__ the VirtualBox software. And yes, you can have a system that's simultaneously a guest and a host. The question is not "if", but "why" :) ) Install it onto your computer.
-
-Next, I'm going to make the assumption you're interested in a Linux distro. If you're new to this glorious part of the Internet, buckle up! and try out the previously mentioned Lubuntu, it's really nice. You can get an ISO image [here](https://lubuntu.net/downloads/). Once it's ready, we can move on.
-
-Open VirtualBox and click New. In the name field, write down "Lubuntu" and VB will intelligently decide that it's a Linux distro. Make sure that you chose the correct version (32- vs 64- bit) before moving on. Next, it will ask you how much RAM you want to devote to the machine. The recommended memory size for this distro is 1024MB, although it may very well work with 512MB. Finally, a few steps devoted to the hard disk. There are 2 options: you can either allocate a fixed amount of hard disk or allocate it dynamically. The main difference is, the OS using dynamic allocation might be a bit slower, but with the fixed size, the size will not change, so if you allocate 10GB but the system only weighs 3GB, the file will still take 10GB on the hard drive.
-
-Once you have created a new machine, double click it and you'll get asked to provide the path to the system. In the file explorer choose the ISO you have downloaded.
+### Potential issues 
 
 __I went with "Install the system" but I got an error with a meditating guy and something. What's wrong?__
 
 A plethora of things might have gone awry, but if you have an average- or better performing computer, you shouldn't be running into [issues with memory size](http://www.fixedbyvonnie.com/2014/09/heck-virtualbox-guru-meditation-error/#.W7Eb5xSxU5l). There is, however, one pesky error that I wasted about 30 minutes on: my Thinkpad's default BIOS settings. Turns out I had virtualization turned off in my computer. When I finally discovered what was wrong that was a [fairly easy fix](https://support.lenovo.com/pl/en/solutions/ht500006) (as long as you don't mention the fact that it's bloody hard to get into my Thinkpad's BIOS settings). Depending on your computer this might be an issue with yours as well. Just look in the logs (...\VirtualBox VMs\<Your Box Name>\Logs\VBox.log) and google (or duck duck go) it.
 
-__Okay, so I have an operating system installed and running in the box. What's next?__
+__Whenever I install rvm and restart the machine, rvm is gone. Why?__
 
-Before you do whatever, remember to update your system. It can and it will be dangerous to leave it as it.
-```bash
-sudo apt-get update
-sudo apt-get upgrade
-```
-Next, install whatever you need. If you want to make yourself a Ruby on Rails in a box like we did, I strongly suggest using rbenv over rvm as shown in [this tutorial](https://gorails.com/setup/ubuntu/18.04).
+I strongly suggest using rbenv over rvm as shown in [this tutorial](https://gorails.com/setup/ubuntu/18.04). That's what I did, at least.
 
-Really, do whatever.
+But if you really want that rvm, make sure [you're including it in your PATH](https://stackoverflow.com/questions/28224408/adding-rvm-to-path-ubuntu).
 
 __So if I have an app running on the guest machine on localhost:3000 there, why can't I see it in the browser on the host machine.__
 
-Mainly because there are too separate machines ¯\_(ツ)_/¯ _but don't worry, we can make do, and easily. What we need to figure out is the IP address of your guest machine and to do some port-mapping magic. By default, the IP of the host machine on VirtualBox is set to 10.0.2.15, but there's a slight change something is different on your host, so open up the terminal and type `ifconfig`. (At that point, it may say sth like "I don't recognize this message, try downloading package nettoolssomething. Do it and then retry with ifconfig.)
+Mainly because they are too separate machines ¯\_(ツ)_/¯ _but don't worry, we can make do, and easily. What we need to figure out is the IP address of your guest machine and to do some port-mapping magic. By default, the IP of the host machine on VirtualBox is set to 10.0.2.15, but there's a slight change something is different on your host, so open up the terminal and type `ifconfig`. (At that point, it may say sth like "I don't recognize this message, try downloading package nettoolssomething. Install the package and then retry with ifconfig.)
 It will probably give you more data than you need, but we're looking for the `inet` value. Write it down. Next, turn off the machine, right-click it in VirtualBox, and choose Settings. Once you're there, choose Network, and inspect (most likely) Adapter 1, the one using NAT. Click Advanced.
 
 The option "Port forwarding" is what you're interested in. Yours will at first be empty, but you can easily add new rules to make them look like this: [Port Forwarding Rules](https://i.imgur.com/jTAsWH2.png) Once you've saved your changes, launched the machine back, and started your app, you can go to http://localhost:port on your host machine and it will show you the app running on the guest machine.
@@ -58,4 +43,12 @@ Basically:
 2. Change the forwarding rules on the respective adapter to map your host's whatever port you want to use (I went for 3022) to the guest's port 22.
 3. Put that stuff into Putty and pray.
 
-Fun fact: if you disable Adapter 2 without changing the option "host-only" to "not connected" and later try to import this image on VirtualBox for Linux, it won't work. You have to disconnect the adapter before disabling it. On Windows, however, it works fine. Hell!
+_Fun fact: if you disable Adapter 2 without changing the option "host-only" to "not connected" and later try to import this image on VirtualBox for Linux, it won't work. You have to disconnect the adapter before disabling it. On Windows, however, it works fine. Hell!_
+
+__Can I have my shared folder now?__
+
+Yes, and no. If you have a nicely working Internet connection you download Guest Additions (the ones available in VirtualBox by default _do not_ work), like described [here](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm). However, if you (a) like living dangerously, (b) like weird hacks, (c) cannot be bothered to download Guest Additions you can winscp into your machine and copy the GuestAdditionsISO from the VirtualBox directory (where you installed it) onto the machine and then mount it there.
+
+__You've run into all these issues while setting up shared folders?__
+
+Yes, and probably even more I don't even remember. VirtualBox is glorious (╯°□°）╯︵ ┻━┻
