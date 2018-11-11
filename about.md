@@ -6,7 +6,7 @@ permalink: /about/
 
 I'm a software tester / quality assurance gal, currently working at [Cognifide](http://cognifide.com).
 
-My interests include, unsurprisingly, software testing, as well as data analysis in R and automating _all the things_ in Bash/Powershell.
+My interests include, unsurprisingly, software testing, as well as data analysis in R and automating _all the things_ in Bash/Powershell. Recently I also started picking up some JavaScript (for test automation) and Python (for scripting, because you can only use _this much_ Bash before you want to...bash it...).
 
 Others things I enjoy: linguistics, astrophysics, RPGs, well-made food, and dank memes. 
 
