@@ -4,9 +4,9 @@ title: About me
 permalink: /about/
 ---
 
-I'm a software tester / quality assurance gal, currently working at [Cognifide](http://cognifide.com).
+This blog serves mostly as a reference guide for me; when I learn something new, I usually write it down in case I forget it. Sometimes some of that knowledge might end up here :)
 
-My interests include, unsurprisingly, software testing, as well as data analysis in R and automating _all the things_ in Bash/Powershell. Recently I also started picking up some JavaScript (for test automation) and Python (for scripting, because you can only use _this much_ Bash before you want to...bash it...).
+I work as a QA at [Cognifide](https://www.cognifide.com). My professional interests revolve mostly around software development and data analysis.
 
 Others things I enjoy: linguistics, astrophysics, RPGs, well-made food, and dank memes. 
 
