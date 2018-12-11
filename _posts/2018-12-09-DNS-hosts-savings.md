@@ -3,9 +3,9 @@ layout: post
 title: On saving time and money with /etc/hosts 
 ---
 
-Recently whenever I'm bored, tired and with just 20 minutes to spare (bored enough so I can't go to sleep early but too tired to do anything productive, and turning on the console for _just 20 minutes_ never works) I got onto the habit of browsing clothes, cosmetics, etc. Maybe I need to fill in some void, or maybe I've been succumbing again to the pressure of looking _presentable_ when going to the office (after several months of remote work spend in some jeans and nondescript t-shirts). Either way, there's clearly a pattern here.
+Recently whenever I'm bored, tired and with just 20 minutes to spare (bored enough so I can't go to sleep early but too tired to do anything productive, and turning on the console for _just 20 minutes_ never works) I got onto the habit of browsing clothes, cosmetics, etc. Maybe I need to fill in some void, or maybe I've been succumbing again to the pressure of looking _presentable_ when going to the office (after several months of remote work spent in some jeans and nondescript t-shirts). Either way, there's clearly a pattern here.
 
-So I gathered the websites I've been using too frequently for no good reason, and added them to the /etc/hosts. After a while, I decided to impose that ban on some other sites that seem to bring no value to me. Currently the selection is as follows:
+So I gathered the websites I've been using too frequently for no good reason, and added them to ```/etc/hosts```. After a while, I decided to impose that ban on some other sites that seem to bring no value to me. Currently the selection is as follows:
 
 ```
 # Block super stupid sites I don't want to waste my time on
