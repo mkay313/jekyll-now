@@ -5,10 +5,19 @@
   border: 1px solid #ddd;
   margin: 0px 0 0px 0;
   overflow: auto;
+  font-family: 'Inconsolata', monospace;
 }
 .highlight .highlight {
   border: none;
   box-shadow: none;
+}
+
+.highlighter-rouge {
+  font-weight: 600;
+}
+
+.highlighter-rouge .highlight {
+  font-weight: 500;
 }
 
 .highlight .c { color: #586E75 } /* Comment */
