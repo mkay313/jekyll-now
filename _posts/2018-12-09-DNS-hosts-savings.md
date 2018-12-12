@@ -24,8 +24,6 @@ So I gathered the websites I've been using too frequently for no good reason, an
 0.0.0.0 www.twitter.com
 0.0.0.0 instagram.com
 0.0.0.0 www.instagram.com
-0.0.0.0 www.cropp.com
-0.0.0.0 cropp.com
 ```
 
 I don't even have accounts on twitter and instagram anymore so why was I browsing them? Muscle memory, I think.
