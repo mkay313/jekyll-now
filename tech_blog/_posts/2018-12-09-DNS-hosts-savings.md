@@ -26,7 +26,7 @@ So I gathered the websites I've been using too frequently for no good reason, an
 0.0.0.0 www.instagram.com
 ```
 
-I don't even have accounts on twitter and instagram anymore so why was I browsing them? Muscle memory, I think.
+I don't even have accounts on ~~twitter and~~ _got myself a twitter account back again_ instagram anymore so why was I browsing them? Muscle memory, I think.
 
 Remember to restart the browser (and flush the dns beforehand, preferably) after each change. On Ubuntu 18.04, it's possible to flush dns with ```sudo systemd-resolve --flush-caches```.
 
