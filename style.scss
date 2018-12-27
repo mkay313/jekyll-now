@@ -238,7 +238,9 @@ nav {
 
 .page {
   a {
-    border-bottom: 1px solid $darkGray
+    border-bottom: 1px dashed $gray;
+    display: inline-block;
+    line-height: 0.9;
   }
 }
 
