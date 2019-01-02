@@ -247,8 +247,8 @@ nav {
   a:hover:after {
     position: absolute;
     content: '';
-    height: 2px;
-    bottom: -2px;
+    height: 1px;
+    bottom: -1px;
     margin: 0 auto;
     left: 0;
     background: $underline-color;
