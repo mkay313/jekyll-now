@@ -236,11 +236,6 @@ nav {
 .page, .entry {
   a {
     border-bottom: 1px dashed $gray;
-  }
-}
-
-.page, .entry, nav, .site-name {
-  a {
     display: inline-block;
     line-height: 0.9;
     position: relative;
@@ -251,7 +246,7 @@ nav {
   }
 }
 
-.page, .entry, nav, .site-name {
+.page, .entry {
   a:hover:after {
     position: absolute;
     content: '';
@@ -271,6 +266,17 @@ nav {
     100% {
       width: 100%;
     }
+  }
+}
+
+.post, nav {
+  a:before {
+    font-family: FontAwesome;
+    content: "\f101";
+    display: inline-block;
+    font-weight: 500;
+    color: $underline-color;
+    padding-right: 5px;
   }
 }
 
