@@ -236,6 +236,11 @@ nav {
 .page, .entry {
   a {
     border-bottom: 1px dashed $gray;
+  }
+}
+
+.page, .entry, nav, .site-name {
+  a {
     display: inline-block;
     line-height: 0.9;
     position: relative;
@@ -244,7 +249,9 @@ nav {
   a:hover {
     border-bottom: 0;
   }
+}
 
+.page, .entry, nav, .site-name {
   a:hover:after {
     position: absolute;
     content: '';
