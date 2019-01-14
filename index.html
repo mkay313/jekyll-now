@@ -4,9 +4,9 @@ layout: default
 
 <div class="posts">
   {% for post in site.categories.tech_blog %}
-    <article class="post">
+    <article class="post link-arrow">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
     </article>
   {% endfor %}
 </div>

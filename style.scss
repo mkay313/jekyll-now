@@ -18,9 +18,9 @@ html {
 }
 
 body {
-  background: $white;
+  background: $background-color;
   font: 18px/1.4 $raleway;
-  color: $darkGray;
+  color: $primary-font-color;
 }
 
 .container {
@@ -32,7 +32,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $raleway;
-  color: $darkerGray;
+  color: $heading-font-color;
   font-weight: 300;
 
   line-height: 2.0;
@@ -114,19 +114,19 @@ img {
 
 .date {
   font-style: italic;
-  color: $gray;
+  color: $secondary-color;
   font-size: 12px;
   margin-bottom: 20px;
 }
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $black;
-  background: $lightGray;
+  color: $selection-font-color;
+  background: $secondary-font-color;
 }
 ::selection {
-  color: $black;
-  background: $lightGray;
+  color: $selection-font-color;
+  background: $secondary-font-color;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -145,33 +145,12 @@ img {
 /* LAYOUT / SECTIONS */
 /*********************/
 
-//
-// .masthead
-//
-
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid $secondary-font-color;
 
   @include mobile {
     text-align: center;
-  }
-}
-
-.site-avatar {
-  float: left;
-  width: 70px;
-  height: 70px;
-  margin-right: 15px;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-
-  img {
-    border-radius: 5px;
   }
 }
 
@@ -187,7 +166,7 @@ img {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: $primary-font-color;
   cursor: pointer;
   font-family: $raleway;
   font-weight: 300;
@@ -197,7 +176,7 @@ img {
 
 .site-description {
   margin: -5px 0 0 0;
-  color: $gray;
+  color: $secondary-color;
   font-size: 16px;
 
   @include mobile {
@@ -207,7 +186,7 @@ img {
 
 nav {
   float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+  margin-top: 50px;
   font-family: $raleway;
   font-size: 18px;
 
@@ -220,7 +199,7 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
+    color: $primary-font-color;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
@@ -228,14 +207,14 @@ nav {
 
     @include mobile {
       margin: 0 10px;
-      color: $darkGray;
+      color: $primary-font-color;
     }
   }
 }
 
 .page, .entry {
   a {
-    border-bottom: 1px dashed $gray;
+    border-bottom: 1px dashed $secondary-color;
     display: inline-block;
     line-height: 0.9;
     position: relative;
@@ -244,9 +223,7 @@ nav {
   a:hover {
     border-bottom: 0;
   }
-}
 
-.page, .entry {
   a:hover:after {
     position: absolute;
     content: '';
@@ -254,7 +231,7 @@ nav {
     bottom: -1px;
     margin: 0 auto;
     left: 0;
-    background: $underline-color;
+    background: $primary-color;
     animation-name: underline-color;
     animation-duration: 1000ms;
     animation-fill-mode: forwards;
@@ -269,24 +246,20 @@ nav {
   }
 }
 
-.posts, nav {
+.link-arrow {
   a:before {
     font-family: FontAwesome;
     content: "\f101";
     display: inline-block;
     font-weight: 500;
-    color: $underline-color;
+    color: $primary-color;
     padding-right: 5px;
   }
 }
 
-//
-// .main
-//
-
 .posts > .post {
   padding: 0.75em 0 1em 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid $secondary-font-color;
 }
 
 .posts > .post:last-child {
@@ -297,9 +270,9 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-left: 2px solid $secondary-color;
     padding: 0.1em 1em;
-    color: $gray;
+    color: $secondary-color;
     font-size: 22px;
     font-style: italic;
   }
@@ -313,4 +286,3 @@ nav {
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
-@import "svg-icons";
