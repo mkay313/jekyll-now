@@ -9,7 +9,8 @@ $secondary-color: #666;
 $background-color: #fff;
 $primary-font-color: #333;
 $secondary-font-color: #eee;
-$selection-font-color: #000;
+$selection-font-color: $primary-color;
+$selection-background-color: $secondary-font-color;
 $heading-font-color: #222;
 
 

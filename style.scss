@@ -122,11 +122,11 @@ img {
 // Specify the color of the selection
 ::-moz-selection {
   color: $selection-font-color;
-  background: $secondary-font-color;
+  background: $selection-background-color;
 }
 ::selection {
   color: $selection-font-color;
-  background: $secondary-font-color;
+  background: $selection-background-color;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -210,6 +210,10 @@ nav {
       color: $primary-font-color;
     }
   }
+}
+
+.entry {
+  padding-right: 10px;
 }
 
 .page, .entry {
